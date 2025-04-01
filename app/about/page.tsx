@@ -24,14 +24,13 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="heading-sm">From Passion to Purpose</h2>
               <p className="text-lg text-white/80">
-                Decoded Training Lab began with a simple idea: fitness should be accessible, enjoyable, and
-                community-driven. Our founders, all passionate fitness enthusiasts, noticed that traditional gyms often
-                lacked the supportive environment that many people need to thrive in their fitness journey.
+                Decoded Training Lab is a fitness gym that provides a range of high-intensity classes led by our owner and head coach. We also offer personal training to help members reach their fitness goals. Three days a week, we have specialized classes designed for the 60+ community seeking a different kind of workout.
               </p>
               <p className="text-lg text-white/80">
-                We opened our doors in 2018 with a commitment to creating a space where members feel like family, where
-                beginners feel welcome, and where fitness becomes a sustainable part of life rather than a short-term
-                struggle.
+                Originally founded in Palm Springs, CA, Decoded Gyms has more than 13 years of industry experience. We've now been serving Burlington, NC, for three years, dedicated to helping people of all ages enhance their overall health and wellness.
+              </p>
+              <p className="text-lg text-white/80">
+                Our owner and head coach, Jude Chandrasena, brings over 20,000 hours of coaching expertise, including CrossFit, strength training, Olympic lifting, and bodybuilding. The Decoded Training Lab program is thoroughly tested, proven effective, and includes everything you need for your fitness journey.
               </p>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">

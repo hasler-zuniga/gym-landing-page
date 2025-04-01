@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Contact Us | Decoded Training Lab",
@@ -98,7 +99,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Location</h3>
-                    <p className="text-white/70">123 Fitness Avenue, Cityville, State 12345</p>
+                    <p className="text-white/70">2241 Hanford Rd Suite 107, Burlington, NC 27215</p>
                   </div>
                 </div>
 
@@ -108,11 +109,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Phone</h3>
-                    <p className="text-white/70">(123) 456-7890</p>
+                    <p className="text-white/70">(760) 808-5779</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                {/* <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-full">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
@@ -120,7 +121,7 @@ export default function ContactPage() {
                     <h3 className="font-bold text-lg">Email</h3>
                     <p className="text-white/70">info@decodedtraininglab.com</p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-full">
@@ -128,22 +129,20 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Hours</h3>
-                    <p className="text-white/70">Monday - Friday: 5am - 10pm</p>
-                    <p className="text-white/70">Saturday - Sunday: 7am - 8pm</p>
+                    <p className="text-white/70">Monday - Thursday: 5am - 8pm</p>
+                    <p className="text-white/70">Friday: 5am - 7pm</p>
+                    <p className="text-white/70">Saturday: 10am - 11am</p>
                   </div>
                 </div>
               </div>
 
               <h3 className="font-bold text-lg mb-4">Follow Us</h3>
               <div className="flex gap-4">
-                <a href="#" className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors">
+                <a href="https://www.instagram.com/decoded_lab/" className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors">
                   <Instagram className="h-6 w-6 text-primary" />
                 </a>
-                <a href="#" className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors">
+                <a href="https://www.facebook.com/p/Decoded-Lab-100083355661522/" className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors">
                   <Facebook className="h-6 w-6 text-primary" />
-                </a>
-                <a href="#" className="bg-primary/10 p-3 rounded-full hover:bg-primary/20 transition-colors">
-                  <Twitter className="h-6 w-6 text-primary" />
                 </a>
               </div>
             </div>
@@ -161,10 +160,15 @@ export default function ContactPage() {
           </div>
 
           <div className="aspect-video w-full rounded-xl overflow-hidden shadow-lg">
-            {/* This would be replaced with an actual Google Maps embed */}
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <p className="text-black/50">Google Maps Embed Would Go Here</p>
-            </div>
+            <iframe
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=decodedtraininglab,burlington,nc`}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
@@ -175,9 +179,11 @@ export default function ContactPage() {
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-6">
             Start with a free one-week trial and experience the Decoded Training Lab difference.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">
-            Start Your Free Trial
-          </Button>
+          <Link href="/#trial">
+            <Button size="lg" className="bg-[#16a249] hover:bg-[#16a34a]/90 text-white font-bold text-lg px-8 py-6">
+              START FREE TRIAL
+            </Button>
+          </Link>
         </div>
       </section>
     </main>

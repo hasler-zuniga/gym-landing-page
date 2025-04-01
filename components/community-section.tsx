@@ -43,7 +43,7 @@ export default function CommunitySection() {
               </p>
 
               <p className="text-lg text-white/80">
-                For over 10 years, our supportive community has been the backbone of countless success stories. We're committed to standing beside you throughout your 7-day trial, providing everything you need to start achieving the results you deserve.
+                For over 13 years, our supportive community has been the backbone of countless success stories. We're committed to standing beside you throughout your 7-day trial, providing everything you need to start achieving the results you deserve.
               </p>
 
               <p className="text-lg text-white/80">

@@ -83,9 +83,9 @@ export default function ServicesPage() {
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                   </div>
                   <p className="text-white/80 mb-4">{service.description}</p>
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10">
+                  {/* <Button variant="outline" className="border-white text-white hover:bg-white/10">
                     Learn More
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             ))}
@@ -117,9 +117,9 @@ export default function ServicesPage() {
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                   </div>
                   <p className="text-black/70 mb-4">{service.description}</p>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  {/* <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
                     Learn More
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             ))}
@@ -151,9 +151,9 @@ export default function ServicesPage() {
                     <h3 className="text-2xl font-bold">{service.title}</h3>
                   </div>
                   <p className="text-white/80 mb-4">{service.description}</p>
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10">
+                  {/* <Button variant="outline" className="border-white text-white hover:bg-white/10">
                     Learn More
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             ))}

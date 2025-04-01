@@ -17,19 +17,15 @@ export default function Footer() {
               supportive environment.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-white/70 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/decoded_lab/" className="text-white/70 hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="text-white/70 hover:text-primary transition-colors">
+              <a href="https://www.facebook.com/p/Decoded-Lab-100083355661522/" className="text-white/70 hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="text-white/70 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-white/70 hover:text-primary transition-colors">
+              <a href="https://www.youtube.com/@Athletes-Decoded" className="text-white/70 hover:text-primary transition-colors">
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
               </a>

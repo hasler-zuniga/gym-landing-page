@@ -18,10 +18,12 @@ export default function CommunitySection() {
             className="relative h-[500px] rounded-xl overflow-hidden"
           >
             <Image
-              src="/placeholder.svg?height=1000&width=800&text=Our Community"
-              alt="Gym community"
+              src="/family-photo-2.webp"
+              alt="Our welcoming gym community and family"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
+              priority
             />
           </motion.div>
 

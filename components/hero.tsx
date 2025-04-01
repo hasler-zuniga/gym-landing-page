@@ -33,9 +33,9 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="heading-xl mb-4"
           >
-            DECODE FITNESS.
+            LETS DECODE
             <br />
-            <span className="text-primary">TRANSFORM EVERYTHING.</span>
+            <span className="text-primary">YOUR FITNESS.</span>
           </motion.h1>
 
           <motion.p
@@ -56,7 +56,7 @@ export default function Hero() {
           >
             <Link href="/#trial">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">
-                Join Now
+                7-Day Free Trial
               </Button>
             </Link>
             <Link href="/services">
@@ -65,7 +65,7 @@ export default function Hero() {
                 variant="outline"
                 className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold text-lg px-8 py-6"
               >
-                Free Trial
+                Our Services
               </Button>
             </Link>
           </motion.div>
@@ -76,7 +76,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="mt-12 text-white/80"
           >
-            Questions? Call us at (760) 808-5779
+            Questions? Call us at <a href="tel:+17608085779" className="hover:underline">(760) 808-5779</a>
           </motion.p>
         </motion.div>
       </div>

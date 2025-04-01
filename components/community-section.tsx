@@ -4,8 +4,25 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+
+const IMAGES = [
+  "/family-photo-2.webp",
+  "/family-photo.webp",  // Make sure these images exist
+  "/family-photo-3.webp",  // Make sure these images exist
+]
 
 export default function CommunitySection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % IMAGES.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
@@ -17,14 +34,18 @@ export default function CommunitySection() {
             transition={{ duration: 0.5 }}
             className="relative h-[500px] rounded-xl overflow-hidden"
           >
-            <Image
-              src="/family-photo-2.webp"
-              alt="Our welcoming gym community and family"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              priority
-            />
+            {IMAGES.map((src, index) => (
+              <Image
+                key={src}
+                src={src}
+                alt="Our welcoming gym community and family"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-opacity duration-1000"
+                priority={index === 0}
+                style={{ opacity: currentImageIndex === index ? 1 : 0 }}
+              />
+            ))}
           </motion.div>
 
           <motion.div

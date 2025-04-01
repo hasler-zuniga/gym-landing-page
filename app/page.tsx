@@ -1,20 +1,27 @@
-import Hero from "./components/hero"
-import Features from "./components/features"
-import Programs from "./components/programs"
-import { Navbar } from "./components/navbar"
-import { Footer } from "./components/footer"
+import Hero from "@/components/hero"
+import Features from "@/components/features"
+import GettingStarted from "@/components/getting-started"
+import CommunitySection from "@/components/community-section"
+import Testimonials from "@/components/testimonials"
+import TrialCta from "@/components/trial-cta"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Decoded Training Lab | Your Community Gym",
+  description:
+    "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-week trial today!",
+}
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Programs />
-      </main>
-      <Footer />
-    </div>
+    <main className="overflow-hidden">
+      <Hero />
+      <Features />
+      {/* <GettingStarted /> */}
+      <CommunitySection />
+      <Testimonials />
+      <TrialCta />
+    </main>
   )
 }
 

@@ -1,0 +1,86 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+export default function Hero() {
+  return (
+    <section className="bg-black text-white hero-section relative min-h-screen overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        poster="/hero-poster.jpg"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      {/* Add an overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-black/50" />
+      
+      <div className="container mx-auto px-4 relative z-10 min-h-screen flex items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="heading-xl mb-4"
+          >
+            DECODE FITNESS.
+            <br />
+            <span className="text-primary">TRANSFORM EVERYTHING.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
+          >
+            Transform your body and mind with our tailored fitness programs. Expert guidance, personalized workouts, and
+            a supportive community await you.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link href="/#trial">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">
+                Join Now
+              </Button>
+            </Link>
+            <Link href="/services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold text-lg px-8 py-6"
+              >
+                Free Trial
+              </Button>
+            </Link>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-12 text-white/80"
+          >
+            Questions? Call us at (760) 808-5779
+          </motion.p>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+

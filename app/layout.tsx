@@ -1,24 +1,39 @@
-import "@/styles/globals.css"
+import type React from "react"
+import "@/app/globals.css"
 import { Inter } from "next/font/google"
+import { cn } from "@/lib/utils"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
-export const metadata = {
-  title: "Decoded Training Lab - Transform Your Body and Mind",
-  description: "Expert-led fitness programs and personalized training to help you achieve your fitness goals.",
-    generator: 'v0.dev'
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
-      <body 
-        className={`${inter.className} bg-background text-foreground`}
-        suppressHydrationWarning
-        data-new-gr-c-s-check-loaded="14.1229.0"
-        data-gr-ext-installed=""
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={cn("min-h-screen font-sans antialiased", inter.variable)} suppressHydrationWarning>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
@@ -27,3 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 
 import './globals.css'
+
+export const metadata = {
+      generator: 'v0.dev'
+    };

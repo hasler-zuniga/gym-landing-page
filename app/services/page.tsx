@@ -21,7 +21,7 @@ export default function ServicesPage() {
       title: "Personal Training",
       description:
         "One-on-one sessions tailored to your specific goals with expert trainers who provide personalized guidance and motivation.",
-      image: "personal-training.webp?text=Personal Training",
+      image: "Personal-Training.webp?text=Personal Training",
     },
     {
       title: "Nutrition Coaching",
@@ -39,7 +39,7 @@ export default function ServicesPage() {
       title: "Express Workouts",
       description:
         "Efficient, high-intensity sessions designed for busy individuals who want maximum results in minimum time.",
-      image: "pair-workout.webp?height=600&width=800&text=Express Workouts",
+      image: "Pair-workout.webp?height=600&width=800&text=Express Workouts",
     },
     {
       title: "Specialized Programs",

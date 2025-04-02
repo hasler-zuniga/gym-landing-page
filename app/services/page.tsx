@@ -21,7 +21,7 @@ export default function ServicesPage() {
       title: "Personal Training",
       description:
         "One-on-one sessions tailored to your specific goals with expert trainers who provide personalized guidance and motivation.",
-      image: "personal-training.webp?height=600&width=800&text=Personal Training",
+      image: "personal-training.webp?text=Personal Training",
     },
     {
       title: "Nutrition Coaching",

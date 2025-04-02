@@ -45,7 +45,7 @@ export default function Hero() {
             className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
           >
             Transform your body and mind with our tailored fitness programs. Expert guidance, personalized workouts, and
-            a supportive community await you.
+            a supportive community awaits you.
           </motion.p>
 
           <motion.div
@@ -56,7 +56,7 @@ export default function Hero() {
           >
             <Link href="/#trial">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">
-                7-Day Free Trial
+                1-Day Free Trial
               </Button>
             </Link>
             <Link href="/services">

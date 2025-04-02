@@ -89,7 +89,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="font-bold text-lg mb-4">Subscribe</h3>
             <p className="text-white/70 mb-4">Stay updated with our latest news, promotions, and fitness tips.</p>
             <div className="flex gap-2">
@@ -104,7 +104,7 @@ export default function Footer() {
                 Privacy Policy
               </Link>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">

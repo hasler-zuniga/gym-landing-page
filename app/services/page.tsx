@@ -15,37 +15,37 @@ export default function ServicesPage() {
       title: "Group Classes",
       description:
         "Energetic, instructor-led sessions that combine fun with effective workouts. Perfect for those who thrive in a social environment.",
-      image: "/placeholder.svg?height=600&width=800&text=Group Classes",
+      image: "group-workout.webp?height=600&width=800&text=Group Classes",
     },
     {
       title: "Personal Training",
       description:
         "One-on-one sessions tailored to your specific goals with expert trainers who provide personalized guidance and motivation.",
-      image: "/placeholder.svg?height=600&width=800&text=Personal Training",
+      image: "personal-training.webp?height=600&width=800&text=Personal Training",
     },
     {
       title: "Nutrition Coaching",
       description:
         "Expert advice on fueling your body for optimal performance and health, with customized meal plans and ongoing support.",
-      image: "/placeholder.svg?height=600&width=800&text=Nutrition Coaching",
+      image: "nutrition.webp?height=600&width=800&text=Nutrition Coaching",
     },
     {
       title: "Recovery Sessions",
       description:
         "Specialized techniques to help your body recover faster, prevent injuries, and improve overall performance.",
-      image: "/placeholder.svg?height=600&width=800&text=Recovery Sessions",
+      image: "cup-therapy2.webp?height=400&width=800&text=Recovery Sessions",
     },
     {
       title: "Express Workouts",
       description:
         "Efficient, high-intensity sessions designed for busy individuals who want maximum results in minimum time.",
-      image: "/placeholder.svg?height=600&width=800&text=Express Workouts",
+      image: "pair-workout.webp?height=600&width=800&text=Express Workouts",
     },
     {
       title: "Specialized Programs",
       description:
         "Targeted training for specific goals like weight loss, muscle building, or sports performance enhancement.",
-      image: "/placeholder.svg?height=600&width=800&text=Specialized Programs",
+      image: "barbell.webp?height=600&width=800&text=Specialized Programs",
     },
   ]
 
@@ -106,7 +106,11 @@ export default function ServicesPage() {
                     src={service.image || "/placeholder.svg"}
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`transition-transform duration-500 ${
+                      service.title === "Recovery Sessions" 
+                        ? "object-cover object-[center_-320px] group-hover:scale-105" 
+                        : "object-cover group-hover:scale-105"
+                    }`}
                   />
                 </div>
                 <div className="p-6">

@@ -35,7 +35,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/placeholder.svg?height=800&width=600&text=Our Story"
+                src="about-us.webp?height=800&width=600&text=Our Story"
                 alt="Gym founders"
                 fill
                 className="object-cover"
@@ -91,7 +91,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-black text-white py-20">
+      {/* <section className="bg-black text-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="heading-md mb-4">Meet Our Team</h2>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-white text-black py-20">
         <div className="container mx-auto px-4 text-center">

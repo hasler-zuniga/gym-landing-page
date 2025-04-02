@@ -1,16 +1,56 @@
-import type { Metadata } from "next"
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Loader2, CheckCircle2 } from "lucide-react"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Contact Us | Decoded Training Lab",
-  description: "Get in touch with our team for inquiries, support, or to schedule a visit to our gym.",
-}
-
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError(null)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    const data = {
+      firstName: formData.get('firstName') as string,
+      lastName: formData.get('lastName') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+    }
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Failed to submit form')
+      }
+
+      setFormSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <main>
       <section className="bg-black text-white inner-page-content">
@@ -25,68 +65,116 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="first-name" className="text-sm font-medium">
-                      First Name
-                    </label>
-                    <Input id="first-name" placeholder="John" className="bg-white/10 border-white/20 text-white" />
+              {!formSubmitted ? (
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="firstName" className="text-sm font-medium">
+                        First Name
+                      </label>
+                      <Input id="firstName" name="firstName" placeholder="John" className="bg-white/10 border-white/20 text-white" required />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="lastName" className="text-sm font-medium">
+                        Last Name
+                      </label>
+                      <Input id="lastName" name="lastName" placeholder="Doe" className="bg-white/10 border-white/20 text-white" required />
+                    </div>
                   </div>
+
                   <div className="space-y-2">
-                    <label htmlFor="last-name" className="text-sm font-medium">
-                      Last Name
+                    <label htmlFor="email" className="text-sm font-medium">
+                      Email
                     </label>
-                    <Input id="last-name" placeholder="Doe" className="bg-white/10 border-white/20 text-white" />
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="john.doe@example.com"
+                      className="bg-white/10 border-white/20 text-white"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium">
+                      Phone Number
+                    </label>
+                    <Input 
+                      id="phone" 
+                      name="phone" 
+                      placeholder="(123) 456-7890" 
+                      className="bg-white/10 border-white/20 text-white" 
+                      required 
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium">
+                      Subject
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      placeholder="Membership Inquiry"
+                      className="bg-white/10 border-white/20 text-white"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us how we can help you..."
+                      rows={5}
+                      className="bg-white/10 border-white/20 text-white"
+                      required
+                    />
+                  </div>
+
+                  {error && (
+                    <div className="text-red-500 text-sm">{error}</div>
+                  )}
+
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
+                  </Button>
+                </form>
+              ) : (
+                <div className="bg-white/10 p-6 rounded-lg text-center">
+                  <div className="flex flex-col items-center space-y-4">
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      <CheckCircle2 className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold">Thank You!</h3>
+                    <p className="text-white/70">
+                      Your message has been sent. We'll get back to you within 24 hours.
+                    </p>
+                    <Button
+                      variant="outline"
+                      onClick={() => setFormSubmitted(false)}
+                      className="border-primary text-primary hover:bg-primary/10"
+                    >
+                      Send Another Message
+                    </Button>
                   </div>
                 </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john.doe@example.com"
-                    className="bg-white/10 border-white/20 text-white"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium">
-                    Phone Number
-                  </label>
-                  <Input id="phone" placeholder="(123) 456-7890" className="bg-white/10 border-white/20 text-white" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    placeholder="Membership Inquiry"
-                    className="bg-white/10 border-white/20 text-white"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us how we can help you..."
-                    rows={5}
-                    className="bg-white/10 border-white/20 text-white"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-                  Send Message
-                </Button>
-              </form>
+              )}
             </div>
 
             <div>

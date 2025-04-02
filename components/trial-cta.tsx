@@ -8,15 +8,50 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { Textarea } from "@/components/ui/textarea"
+import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react"
 
 export default function TrialCta() {
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setFormSubmitted(true)
+    setIsSubmitting(true)
+    setError(null)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    const data = {
+      firstName: formData.get('firstName') as string,
+      lastName: formData.get('lastName') as string,
+      email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      goals: formData.get('goals') as string,
+    }
+
+    try {
+      const response = await fetch('/api/trial', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.message || 'Failed to submit form')
+      }
+
+      setFormSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -41,7 +76,7 @@ export default function TrialCta() {
         <div className="max-w-md mx-auto">
           <Card className="border-primary/20 shadow-lg bg-white text-black">
             <CardHeader className="bg-primary text-white rounded-t-lg">
-              <CardTitle className="text-2xl">Free 7-Day Trial</CardTitle>
+              <CardTitle className="text-2xl">Free 1-Day Trial</CardTitle>
               <CardDescription className="text-white/90">No credit card required. No obligations.</CardDescription>
             </CardHeader>
 
@@ -51,38 +86,57 @@ export default function TrialCta() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="first-name">First Name</Label>
-                        <Input id="first-name" placeholder="John" required />
+                        <Label htmlFor="firstName">First Name</Label>
+                        <Input id="firstName" name="firstName" placeholder="John" required />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="last-name">Last Name</Label>
-                        <Input id="last-name" placeholder="Doe" required />
+                        <Label htmlFor="lastName">Last Name</Label>
+                        <Input id="lastName" name="lastName" placeholder="Doe" required />
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="john.doe@example.com" required />
+                      <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" placeholder="(123) 456-7890" required />
+                      <Input id="phone" name="phone" placeholder="(123) 456-7890" required />
                     </div>
-
-                    <div className="flex items-start space-x-2 pt-2">
-                      <Checkbox id="terms" required />
-                      <Label htmlFor="terms" className="text-sm leading-tight">
-                        I agree to the terms and conditions and understand that my information will be used as described
-                        in the privacy policy.
-                      </Label>
+                    <div className="space-y-2">
+                      <Label htmlFor="goals">Your Fitness Goals</Label>
+                      <Textarea 
+                        id="goals" 
+                        name="goals"
+                        placeholder="Tell us about your fitness goals and what you hope to achieve..."
+                        className="min-h-[100px]"
+                        required
+                      />
                     </div>
+                    
+                    {error && (
+                      <div className="text-red-500 text-sm mt-2">{error}</div>
+                    )}
                   </div>
                 </CardContent>
 
                 <CardFooter>
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
-                    Claim Your Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary/90 text-white"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> 
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Claim Your Free Trial <ArrowRight className="ml-2 h-4 w-4" />
+                      </>
+                    )}
                   </Button>
                 </CardFooter>
               </form>
@@ -97,13 +151,13 @@ export default function TrialCta() {
                     Your free trial request has been submitted. One of our team members will contact you shortly to get
                     you started.
                   </p>
-                  <Button
+                  {/* <Button
                     variant="outline"
                     onClick={() => setFormSubmitted(false)}
                     className="border-primary text-primary hover:bg-primary/10"
                   >
                     Submit Another Request
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             )}

@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Decoded Training Lab | Your Community Gym",
   description:
-    "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-week trial today!",
+    "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!",
 }
 
 export default function Home() {

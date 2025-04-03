@@ -106,11 +106,7 @@ export default function ServicesPage() {
                     src={service.image || "/placeholder.svg"}
                     alt={service.title}
                     fill
-                    className={`transition-transform duration-500 ${
-                      service.title === "Recovery Sessions" 
-                        ? "object-cover object-[center_-320px] group-hover:scale-105" 
-                        : "object-cover group-hover:scale-105"
-                    }`}
+                    className="transition-transform duration-500 object-cover group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
@@ -169,7 +165,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading-md mb-3 text-primary">Experience Our Services Firsthand</h2>
           <p className="text-xl text-black/70 max-w-2xl mx-auto mb-6">
-            Try any of our classes or facilities with our free one-week trial. No commitment required.
+            Try any of our classes or facilities with our free one-day trial. No commitment required.
           </p>
           <Link href="/#trial">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">

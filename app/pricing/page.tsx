@@ -170,7 +170,7 @@ export default function PricingPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading-md mb-3">Not Sure Which Plan Is Right For You?</h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-6">
-            Try us out with a free one-week trial and get personalized recommendations from our team.
+            Try us out with a free one-day trial and get personalized recommendations from our team.
           </p>
           <Link href="/#trial">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold text-lg px-8 py-6">

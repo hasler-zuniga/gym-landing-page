@@ -265,7 +265,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading-md mb-3">Ready to Transform Your Fitness Journey?</h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-6">
-            Start with a free one-week trial and experience the Decoded Training Lab difference.
+            Start with a free one-day trial and experience the Decoded Training Lab difference.
           </p>
           <Link href="/#trial">
             <Button size="lg" className="bg-[#16a249] hover:bg-[#16a34a]/90 text-white font-bold text-lg px-8 py-6">

@@ -65,7 +65,7 @@ export default function TrialCta() {
           className="text-center mb-12"
         >
           <h2 className="heading-md mb-4">
-            Start Your <span className="text-primary">Free One-Week Trial</span>
+            Start Your <span className="text-primary">Free One-Day Trial</span>
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
             Experience everything Decoded Training Lab has to offer with no commitment. Try our classes, meet our

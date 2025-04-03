@@ -60,15 +60,15 @@ export default function CommunitySection() {
 
             <div className="space-y-6 border-l-4 border-primary pl-6">
               <p className="text-lg text-white/80">
-                We understand the disappointment of unrealized fitness goals. But don't worry, you're never alone at Decoded Training Lab.
+                We understand the disappointment of unrealized fitness goals. But don't worry, you're never alone at Decoded Training Lab in Burlington, NC.
               </p>
 
               <p className="text-lg text-white/80">
-                For over 13 years, our supportive community has been the backbone of countless success stories. We're committed to standing beside you throughout your journey, providing everything you need to start achieving the results you deserve.
+                For over 13 years, our supportive fitness community in Burlington has been the backbone of countless success stories. We're committed to standing beside you throughout your journey, providing everything you need to start achieving the results you deserve.
               </p>
 
               <p className="text-lg text-white/80">
-                Experience firsthand why our members stay with us for the long haul—because here, your goals become our shared mission.
+                Experience firsthand why our members in Burlington, North Carolina stay with us for the long haul—because here, your goals become our shared mission. Join the premier community gym in Alamance County today.
               </p>
             </div>
 

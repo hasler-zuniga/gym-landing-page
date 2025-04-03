@@ -35,7 +35,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="about-us.webp?height=800&width=600&text=Our Story"
+                src="/about-us.webp?height=800&width=600&text=Our Story"
                 alt="Gym founders"
                 fill
                 className="object-cover"

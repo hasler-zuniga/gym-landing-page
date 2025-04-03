@@ -13,24 +13,28 @@ export default function Services() {
       description: "Energetic, instructor-led sessions that combine fun with effective workouts.",
       icon: <Users className="h-6 w-6 text-primary" />,
       image: "/placeholder.svg?height=600&width=800&text=Group Classes",
+      altText: "Energetic group fitness class with participants working out together at Decoded Training Lab",
     },
     {
       title: "Personal Training",
       description: "One-on-one sessions tailored to your specific goals with expert trainers.",
       icon: <Dumbbell className="h-6 w-6 text-primary" />,
       image: "/placeholder.svg?height=600&width=800&text=Personal Training",
+      altText: "Personal trainer working one-on-one with a client at Decoded Training Lab",
     },
     {
       title: "Nutrition Coaching",
       description: "Expert advice on fueling your body for optimal performance and health.",
       icon: <Leaf className="h-6 w-6 text-primary" />,
       image: "/placeholder.svg?height=600&width=800&text=Nutrition Coaching",
+      altText: "Nutrition coach discussing meal plans and healthy eating habits with a client",
     },
     {
       title: "Recovery Sessions",
       description: "Specialized techniques to help your body recover faster and prevent injuries.",
       icon: <Heart className="h-6 w-6 text-primary" />,
       image: "/placeholder.svg?height=600&width=800&text=Recovery Sessions",
+      altText: "Recovery therapy session showing specialized techniques for muscle recovery and injury prevention",
     },
   ]
 
@@ -56,19 +60,18 @@ export default function Services() {
   }
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the perfect fitness solution for your unique journey, whether you're just starting out or looking
-            to reach new heights.
+          <h2 className="heading-md mb-4">OUR SERVICES</h2>
+          <p className="text-xl text-black/70 max-w-3xl mx-auto">
+            Discover how our diverse range of fitness solutions can help you achieve your unique health and fitness goals.
           </p>
         </motion.div>
 
@@ -77,7 +80,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {services.map((service, index) => (
             <motion.div
@@ -88,9 +91,11 @@ export default function Services() {
               <div className="relative h-[200px]">
                 <Image
                   src={service.image || "/placeholder.svg"}
-                  alt={service.title}
+                  alt={service.altText || service.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading={index < 2 ? "eager" : "lazy"}
                 />
               </div>
               <div className="p-6">

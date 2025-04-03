@@ -5,11 +5,55 @@ import { cn } from "@/lib/utils"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Metadata } from "next"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })
+
+export const metadata: Metadata = {
+  title: {
+    default: "Decoded Training Lab | Your Community Gym",
+    template: "%s | Decoded Training Lab"
+  },
+  description: "Join our fitness family and transform your life with our supportive community and expert guidance. Based in Burlington, NC.",
+  keywords: ["gym", "fitness", "training", "workout", "personal trainer", "Burlington NC", "community gym", "health", "wellness"],
+  metadataBase: new URL("https://www.decodedtraininglab.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.decodedtraininglab.com",
+    title: "Decoded Training Lab | Your Community Gym",
+    description: "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!",
+    siteName: "Decoded Training Lab",
+    images: [
+      {
+        url: "https://www.decodedtraininglab.com/decoded-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Decoded Training Lab Community"
+      }
+    ]
+  },
+  alternates: {
+    canonical: "https://www.decodedtraininglab.com"
+  },
+  other: {
+    "facebook": "https://www.facebook.com/p/Decoded-Lab-100083355661522/",
+    "instagram": "https://www.instagram.com/decoded_lab/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
 
 export default function RootLayout({
   children,
@@ -38,11 +82,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'
-
-export const metadata = {
-      generator: 'v0.dev'
-    };

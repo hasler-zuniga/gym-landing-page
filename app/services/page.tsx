@@ -15,37 +15,43 @@ export default function ServicesPage() {
       title: "Group Classes",
       description:
         "Energetic, instructor-led sessions that combine fun with effective workouts. Perfect for those who thrive in a social environment.",
-      image: "group-workout.webp?height=600&width=800&text=Group Classes",
+      image: "/group-workout.webp?height=600&width=800&text=Group Classes",
+      altText: "Energetic group fitness class with participants working out together at Decoded Training Lab",
     },
     {
       title: "Personal Training",
       description:
         "One-on-one sessions tailored to your specific goals with expert trainers who provide personalized guidance and motivation.",
-      image: "Personal-Training.webp?text=Personal Training",
+      image: "/Personal-Training.webp?text=Personal Training",
+      altText: "Personal trainer working one-on-one with a client at Decoded Training Lab",
     },
     {
       title: "Nutrition Coaching",
       description:
         "Expert advice on fueling your body for optimal performance and health, with customized meal plans and ongoing support.",
-      image: "nutrition.webp?height=600&width=800&text=Nutrition Coaching",
+      image: "/nutrition.webp?height=600&width=800&text=Nutrition Coaching",
+      altText: "Nutrition coach providing personalized meal plans and support to clients at Decoded Training Lab",
     },
     {
       title: "Recovery Sessions",
       description:
         "Specialized techniques to help your body recover faster, prevent injuries, and improve overall performance.",
-      image: "cup-therapy2.webp?height=400&width=800&text=Recovery Sessions",
+      image: "/cup-therapy2.webp?height=400&width=800&text=Recovery Sessions",
+      altText: "Recovery session with cup therapy at Decoded Training Lab",
     },
     {
       title: "Express Workouts",
       description:
         "Efficient, high-intensity sessions designed for busy individuals who want maximum results in minimum time.",
-      image: "Pair-workout.webp?height=600&width=800&text=Express Workouts",
+      image: "/Pair-workout.webp?height=600&width=800&text=Express Workouts",
+      altText: "Express workout with a partner at Decoded Training Lab",
     },
     {
       title: "Specialized Programs",
       description:
         "Targeted training for specific goals like weight loss, muscle building, or sports performance enhancement.",
-      image: "barbell.webp?height=600&width=800&text=Specialized Programs",
+      image: "/barbell.webp?height=600&width=800&text=Specialized Programs",
+      altText: "Specialized program with a barbell at Decoded Training Lab",
     },
   ]
 
@@ -70,7 +76,7 @@ export default function ServicesPage() {
                 <div className="relative h-[250px]">
                   <Image
                     src={service.image || "/placeholder.svg"}
-                    alt={service.title}
+                    alt={service.altText}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -104,7 +110,7 @@ export default function ServicesPage() {
                 <div className="relative h-[250px]">
                   <Image
                     src={service.image || "/placeholder.svg"}
-                    alt={service.title}
+                    alt={service.altText}
                     fill
                     className="transition-transform duration-500 object-cover group-hover:scale-105"
                   />
@@ -138,7 +144,7 @@ export default function ServicesPage() {
                 <div className="relative h-[250px]">
                   <Image
                     src={service.image || "/placeholder.svg"}
-                    alt={service.title}
+                    alt={service.altText}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />

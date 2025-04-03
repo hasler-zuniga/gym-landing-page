@@ -30,7 +30,7 @@ export default function AboutPage() {
                 Originally founded in Palm Springs, CA, Decoded Gyms has more than 13 years of industry experience. We've now been serving Burlington, NC, for three years, dedicated to helping people of all ages enhance their overall health and wellness.
               </p>
               <p className="text-lg text-white/80">
-                Our owner and head coach, Jude Chandrasena, brings over 20,000 hours of coaching expertise, including CrossFit, strength training, Olympic lifting, and bodybuilding. The Decoded Training Lab program is thoroughly tested, proven effective, and includes everything you need for your fitness journey.
+                Our owner and head coach, Jude Chandrasena, brings over 34,000 hours of coaching expertise, including CrossFit, strength training, Olympic lifting, and bodybuilding. The Decoded Training Lab program is thoroughly tested, proven effective, and includes everything you need for your fitness journey.
               </p>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">

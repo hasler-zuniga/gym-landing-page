@@ -11,22 +11,22 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Mary Jo Corleto",
       role: "Member for 2 years",
       image: "/placeholder.svg?height=200&width=200&text=Sarah",
       quote:
         "Joining Decoded Training Lab was the best decision I've made for my health. The supportive community and expert trainers have helped me achieve goals I never thought possible.",
     },
     {
-      name: "Michael Chen",
+      name: "Hasler Zuniga",
       role: "Member for 1 year",
       image: "/placeholder.svg?height=200&width=200&text=Michael",
       quote:
         "As someone who was intimidated by gyms, I found a welcoming home at Decoded Training Lab. The trainers take time to understand your goals and the community feels like family.",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Member for 3 years",
+      name: "Susanna Gaither",
+      role: "Member for 1 year",
       image: "/placeholder.svg?height=200&width=200&text=Emily",
       quote:
         "The personalized approach at Decoded Training Lab sets them apart. They don't just help you get fit; they educate you on sustainable health practices for life.",

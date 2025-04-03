@@ -33,7 +33,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="heading-xl mb-4"
           >
-            LETS DECODE
+            LET'S DECODE
             <br />
             <span className="text-primary">YOUR FITNESS.</span>
           </motion.h1>

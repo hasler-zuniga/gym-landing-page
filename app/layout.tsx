@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Decoded Training Lab"
   },
   description: "Join our fitness family and transform your life with our supportive community and expert guidance. Based in Burlington, NC.",
-  keywords: ["gym", "fitness", "training", "workout", "personal trainer", "Burlington NC", "community gym", "health", "wellness"],
+  keywords: ["gym", "fitness", "training", "workout", "personal trainer", "Burlington NC", "community gym", "group fitness", "HIIT workouts"],
   metadataBase: new URL("https://www.decodedtraininglab.com"),
   openGraph: {
     type: "website",

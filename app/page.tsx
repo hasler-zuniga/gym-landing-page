@@ -63,7 +63,37 @@ export default function Home() {
             "https://www.facebook.com/p/Decoded-Lab-100083355661522/", // Update with your social media
             "https://www.instagram.com/decoded_lab/",
           ],
-          "description": "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!"
+          "description": "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Fitness Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Personal Training",
+                  "description": "One-on-one personalized fitness coaching"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Group Fitness",
+                  "description": "Energetic group workouts led by expert trainers"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "HIIT Workouts",
+                  "description": "High-intensity interval training for maximum results"
+                }
+              }
+            ]
+          }
         })
       }} />
       <Hero />

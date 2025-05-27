@@ -8,6 +8,7 @@ type TrialFormData = {
   email: string;
   phone: string;
   goals: string;
+  hearAboutUs: string;
 };
 
 type ContactFormData = {
@@ -100,6 +101,7 @@ export async function sendTrialRequestEmails(data: TrialFormData) {
     <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
     <p><strong>Email:</strong> ${data.email}</p>
     <p><strong>Phone:</strong> ${data.phone}</p>
+    <p><strong>How they heard about us:</strong> ${data.hearAboutUs}</p>
     <p><strong>Fitness Goals:</strong> ${data.goals}</p>
     <div class="divider"></div>
     <p>Thank you!</p>
@@ -109,6 +111,7 @@ export async function sendTrialRequestEmails(data: TrialFormData) {
   const ownerEmailPromise = resend.emails.send({
     from: 'Decoded Training Lab <no-reply@info.decodedtraininglab.com>',
     to: ['haslzun08@gmail.com', 'decodedtraininglab@gmail.com'], // Replace with actual owner emails
+    // to: ['haslzun08@gmail.com'], // Replace with actual owner emails
     subject: 'Free 1 Day Trial Request',
     html: createEmailTemplate(ownerContent),
   });

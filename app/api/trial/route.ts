@@ -6,9 +6,9 @@ export async function POST(request: Request) {
     const data = await request.json();
     
     // Validate the required fields
-    const { firstName, lastName, email, phone, goals } = data;
+    const { firstName, lastName, email, phone, goals, hearAboutUs } = data;
     
-    if (!firstName || !lastName || !email || !phone || !goals) {
+    if (!firstName || !lastName || !email || !phone || !goals || !hearAboutUs) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
@@ -21,7 +21,8 @@ export async function POST(request: Request) {
       lastName, 
       email, 
       phone, 
-      goals 
+      goals,
+      hearAboutUs
     });
     
     return NextResponse.json(

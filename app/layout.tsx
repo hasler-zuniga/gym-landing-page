@@ -6,6 +6,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Metadata } from "next"
+import Script from "next/script"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,6 +72,20 @@ export default function RootLayout({
         />
       </head>
       <body className={cn("min-h-screen font-sans antialiased", inter.variable)} suppressHydrationWarning>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+          `}
+        </Script>
+
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <div className="relative flex min-h-screen flex-col">
             <Header />

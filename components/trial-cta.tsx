@@ -9,12 +9,14 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react"
 
 export default function TrialCta() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [hearAboutUs, setHearAboutUs] = useState<string>("")
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -30,6 +32,7 @@ export default function TrialCta() {
       email: formData.get('email') as string,
       phone: formData.get('phone') as string,
       goals: formData.get('goals') as string,
+      hearAboutUs: hearAboutUs,
     }
 
     try {
@@ -104,6 +107,22 @@ export default function TrialCta() {
                       <Label htmlFor="phone">Phone Number</Label>
                       <Input id="phone" name="phone" placeholder="(123) 456-7890" required />
                     </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="hearAboutUs">How did you hear about us?</Label>
+                      <Select value={hearAboutUs} onValueChange={setHearAboutUs} required>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select an option" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="tiktok">TikTok</SelectItem>
+                          <SelectItem value="instagram">Instagram</SelectItem>
+                          <SelectItem value="referral">Referral</SelectItem>
+                          <SelectItem value="search">Google</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="goals">Your Fitness Goals</Label>
                       <Textarea 

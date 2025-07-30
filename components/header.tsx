@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation"
 export default function Header() {
   // Update the header to ensure it has a consistent height
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isSheetOpen, setIsSheetOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Header() {
   }, [])
 
   const navItems = [
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
@@ -65,7 +67,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon" className="text-white">
               <Menu className="h-6 w-6" />
@@ -73,11 +75,13 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-black text-white">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col gap-6 mt-8">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
+                  onClick={() => setIsSheetOpen(false)}
                   className={cn(
                     "text-lg font-medium transition-colors hover:text-primary",
                     pathname === item.href ? "text-primary" : "text-white",
@@ -86,7 +90,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Link href="/#trial" className="mt-4">
+              <Link href="/#trial" className="mt-4" onClick={() => setIsSheetOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold">Start Free Trial</Button>
               </Link>
             </div>

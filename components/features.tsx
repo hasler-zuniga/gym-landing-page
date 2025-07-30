@@ -61,7 +61,7 @@ export default function Features() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-md mb-4 text-primary">Why Choose Decoded Training Lab</h2>
+          <h2 className="heading-md mb-4 text-primary">Why Choose The Best Gym in Burlington, NC?</h2>
           <p className="text-xl text-black/80 max-w-3xl mx-auto">
             We're more than just a gym - we're a community dedicated to helping you achieve your fitness goals.
           </p>

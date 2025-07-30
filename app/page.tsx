@@ -8,9 +8,12 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import Services from "@/components/services"
 export const metadata: Metadata = {
-  title: "Decoded Training Lab | Your Community Gym",
+  title: "Decoded Training Lab – Community Gym & Personal Training in Burlington, NC",
   description:
-    "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!",
+    "Looking for a gym in Burlington NC? Our community-focused facility offers group classes, personal training and HIIT workouts. Start your free trial today!",
+  alternates: {
+    canonical: "https://www.decodedtraininglab.com"
+  },
 }
 
 export default function Home() {

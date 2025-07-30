@@ -38,13 +38,22 @@ export default function Hero() {
             <span className="text-primary">YOUR FITNESS.</span>
           </motion.h1>
 
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="text-lg md:text-xl text-white/90 mb-8 uppercase tracking-wider"
+          >
+            Located in Burlington, North Carolina
+          </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
           >
-            Transform your body and mind with our tailored fitness programs. Expert guidance, personalized workouts, and
+            Transform your body and mind with our tailored fitness programs at our gym in Burlington, NC. Expert guidance, personalized workouts, and
             a supportive community awaits you.
           </motion.p>
 
@@ -59,7 +68,7 @@ export default function Hero() {
                 1-Day Free Trial
               </Button>
             </Link>
-            <Link href="/services">
+            {/* <Link href="/services">
               <Button
                 size="lg"
                 variant="outline"
@@ -67,7 +76,7 @@ export default function Hero() {
               >
                 Our Services
               </Button>
-            </Link>
+            </Link> */}
           </motion.div>
 
           <motion.p

@@ -4,8 +4,11 @@ import { Check } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Pricing | Decoded Training Lab",
-  description: "Explore our flexible membership options designed to fit your lifestyle and fitness goals.",
+  title: "Gym Membership Pricing Burlington NC | Decoded Training Lab",
+  description: "Affordable gym membership plans in Burlington NC. Flexible options include personal training, group classes, and HIIT workouts. No long-term contracts.",
+  alternates: {
+    canonical: "https://www.decodedtraininglab.com/pricing"
+  },
 }
 
 export default function PricingPage() {
@@ -63,9 +66,9 @@ export default function PricingPage() {
       <section className="bg-black text-white inner-page-content">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="heading-lg mb-4">Membership Plans</h1>
+            <h1 className="heading-lg mb-4">Burlington NC Gym Membership Plans</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Flexible options to support your fitness journey, with no long-term contracts required.
+              Affordable and flexible gym membership options in Burlington, NC to support your fitness journey, with no long-term contracts required.
             </p>
           </div>
 

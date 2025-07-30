@@ -58,7 +58,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h1 className="heading-lg mb-4">Contact Us</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              We're here to answer your questions and help you on your fitness journey.
+              We're here to answer your questions and help you start your fitness journey at our Burlington, NC location.
             </p>
           </div>
 
@@ -241,9 +241,9 @@ export default function ContactPage() {
       <section className="bg-white text-black py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="heading-md mb-4 text-primary">Visit Our Gym</h2>
+            <h2 className="heading-md mb-4 text-primary">Visit Our Burlington NC Gym</h2>
             <p className="text-black/70 max-w-2xl mx-auto">
-              Come see our facilities in person and meet our friendly team.
+              Come see our Burlington, NC facility in person and meet our friendly team at 2241 Hanford Rd Suite 107.
             </p>
           </div>
 

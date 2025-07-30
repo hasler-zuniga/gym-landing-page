@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Services | Decoded Training Lab",
+  title: "Gym Services Burlington NC | Personal Training & Group Classes",
   description:
-    "Explore our range of fitness classes, personal training, and specialized programs designed for all fitness levels.",
+    "Explore our Burlington NC gym's fitness classes, personal training, nutrition coaching and specialized programs. Expert-led HIIT workouts and community support.",
+  alternates: {
+    canonical: "https://www.decodedtraininglab.com/services"
+  },
 }
 
 export default function ServicesPage() {
@@ -60,10 +63,10 @@ export default function ServicesPage() {
       <section className="bg-black text-white inner-page-content">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="heading-lg mb-4">Our Services</h1>
+            <h1 className="heading-lg mb-4">Fitness Services in Burlington, NC</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Discover the perfect fitness solution for your unique journey, whether you're just starting out or looking
-              to reach new heights.
+              Discover the perfect fitness solution at our Burlington NC gym, whether you're just starting out or looking
+              to reach new heights with our expert trainers.
             </p>
           </div>
 

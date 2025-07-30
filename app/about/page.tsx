@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About Us | Decoded Training Lab",
-  description: "Learn about our mission, values, and the community that makes Decoded Training Lab special.",
+  title: "About Our Burlington NC Gym | Decoded Training Lab Community",
+  description: "Learn about our Burlington NC gym's mission, values, and the supportive fitness community. 13+ years experience, expert coaching, and personalized training.",
+  alternates: {
+    canonical: "https://www.decodedtraininglab.com/about"
+  },
 }
 
 export default function AboutPage() {
@@ -16,13 +19,13 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h1 className="heading-lg mb-4">Our Story</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Founded with a vision to create more than just a gym - we built a community where everyone belongs.
+              Founded with a vision to create more than just a gym in Burlington, NC - we built a community where everyone belongs.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="heading-sm">From Passion to Purpose</h2>
+              <h2 className="heading-sm">Burlington NC's Best Community Gym</h2>
               <p className="text-lg text-white/80">
                 Decoded Training Lab is a fitness gym that provides a range of high-intensity classes led by our owner and head coach. We also offer personal training to help members reach their fitness goals. Three days a week, we have specialized classes designed for the 60+ community seeking a different kind of workout.
               </p>

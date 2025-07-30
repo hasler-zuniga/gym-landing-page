@@ -15,18 +15,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Decoded Training Lab | Your Community Gym",
+    default: "Decoded Training Lab – Community Gym & Personal Training in Burlington, NC",
     template: "%s | Decoded Training Lab"
   },
-  description: "Join our fitness family and transform your life with our supportive community and expert guidance. Based in Burlington, NC.",
+  description: "Looking for a gym in Burlington NC? Our community-focused facility offers group classes, personal training and HIIT workouts. Start your free trial today!",
   keywords: ["gym", "fitness", "training", "workout", "personal trainer", "Burlington NC", "community gym", "group fitness", "HIIT workouts"],
   metadataBase: new URL("https://www.decodedtraininglab.com"),
+  icons: {
+    icon: "/decoded-logo.jpg",
+    shortcut: "/decoded-logo.jpg",
+    apple: "/decoded-logo.jpg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.decodedtraininglab.com",
-    title: "Decoded Training Lab | Your Community Gym",
-    description: "Join our fitness family and transform your life with our supportive community and expert guidance. Try a free one-day trial today!",
+    title: "Decoded Training Lab – Community Gym & Personal Training in Burlington, NC",
+    description: "Looking for a gym in Burlington NC? Our community-focused facility offers group classes, personal training and HIIT workouts. Start your free trial today!",
     siteName: "Decoded Training Lab",
     images: [
       {
@@ -37,9 +42,7 @@ export const metadata: Metadata = {
       }
     ]
   },
-  alternates: {
-    canonical: "https://www.decodedtraininglab.com"
-  },
+
   other: {
     "facebook": "https://www.facebook.com/p/Decoded-Lab-100083355661522/",
     "instagram": "https://www.instagram.com/decoded_lab/",

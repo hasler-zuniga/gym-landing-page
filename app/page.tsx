@@ -2,6 +2,7 @@ import Hero from "@/components/hero"
 import Features from "@/components/features"
 import GettingStarted from "@/components/getting-started"
 import CommunitySection from "@/components/community-section"
+import CoachesSection from "@/components/coaches-section"
 import Testimonials from "@/components/testimonials"
 import TrialCta from "@/components/trial-cta"
 import type { Metadata } from "next"
@@ -103,9 +104,10 @@ export default function Home() {
       <Features />
       {/* <GettingStarted /> */}
       <CommunitySection />
+      <CoachesSection />
       {/* <Services /> */}
-      <Testimonials />
       <TrialCta />
+      <Testimonials />
     </main>
   )
 }

@@ -87,14 +87,14 @@ export default function Testimonials() {
               className="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100"
             >
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="relative h-24 w-24 md:h-32 md:w-32 rounded-full overflow-hidden border-4 border-primary/20 flex-shrink-0">
+                {/* <div className="relative h-24 w-24 md:h-32 md:w-32 rounded-full overflow-hidden border-4 border-primary/20 flex-shrink-0">
                   <Image
                     src={testimonials[currentIndex].image || "/placeholder.svg"}
                     alt={testimonials[currentIndex].name}
                     fill
                     className="object-cover"
                   />
-                </div>
+                </div> */}
                 <div className="flex-1">
                   <div className="mb-4 text-primary text-5xl font-bold">"</div>
                   <p className="text-lg md:text-xl italic mb-6">{testimonials[currentIndex].quote}</p>

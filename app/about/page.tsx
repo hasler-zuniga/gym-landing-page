@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import TeamSection from "@/components/team-section"
 
 export const metadata: Metadata = {
   title: "About Our Burlington NC Gym | Decoded Training Lab Community",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+
   return (
     <main>
       <section className="bg-black text-white inner-page-content">
@@ -36,13 +38,18 @@ export default function AboutPage() {
                 Our owner and head coach, Jude Chandrasena, brings over 34,000 hours of coaching expertise, including CrossFit, strength training, Olympic lifting, and bodybuilding. The Decoded Training Lab program is thoroughly tested, proven effective, and includes everything you need for your fitness journey.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/about-us.webp?height=800&width=600&text=Our Story"
-                alt="Gym founders"
-                fill
-                className="object-cover"
-              />
+            <div>
+              <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/about-us.webp?height=800&width=600&text=Our Story"
+                  alt="Gym founders"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-green-400 text-center mt-4 font-medium">
+                Jude Chandrasena - Owner & Coach
+              </p>
             </div>
           </div>
         </div>
@@ -94,33 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* <section className="bg-black text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="heading-md mb-4">Meet Our Team</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Our certified trainers and staff are the heart of our community.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((trainer) => (
-              <div key={trainer} className="group">
-                <div className="relative h-[350px] rounded-xl overflow-hidden mb-4 shadow-md group-hover:shadow-xl transition-all duration-300">
-                  <Image
-                    src={`/placeholder.svg?height=700&width=500&text=Trainer ${trainer}`}
-                    alt={`Fitness trainer ${trainer}`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="text-xl font-bold">Trainer Name</h3>
-                <p className="text-white/70">Fitness Specialist</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+      <TeamSection />
 
       <section className="bg-white text-black py-20">
         <div className="container mx-auto px-4 text-center">

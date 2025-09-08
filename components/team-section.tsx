@@ -81,14 +81,14 @@ const staff = [
     id: 11,
     name: "Mary Jo Corleto",
     role: "Box Consultant",
-    image: "/headshots/mary.jpg",
+    image: "/headshots/mary.JPG",
     bio: "I am excited to be serving as the Box Consultant at Decoded Training Lab, where my focus is around supporting our members and contributing to the growth of our community. In this role, I collaborate with members to gather ideas and input that enhance their experience, while also helping to strengthen the gym’s presence through social media support and creative initiatives. With experience in community engagement and a strong passion for health and wellness, I enjoy finding ways to connect people and create meaningful experiences. Being actively involved in the community has taught me the value of collaboration and building connections that last. I bring enthusiasm, creativity, and a genuine commitment to making the gym not just a place to work out, but a welcoming space where everyone feels supported and motivated."
   },
   {
     id: 12,
     name: "Josh Carr",
     role: "Equipment Tech",
-    image: "/headshots/josh.jpg",
+    image: "/headshots/josh.JPG",
     bio: " A military veteran, I've cultivated discipline and resilience through consistent training. Since 2015, I've dedicated myself to physical fitness, starting at Gold's Gym and then for two and a half years at Decoded Training Lab. Despite my commitment to strength, one exercise I'll never enjoy is pull-ups!"
   }
 ]
